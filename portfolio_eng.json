@@ -12,7 +12,7 @@
     "projects": [
         {
             "id": 3,
-            "img": "./belle-shop.jpg",
+            "img": "./belle-shop.JPG",
             "title": "Belle E-commerce",
             "summary": "This is an fullstack e-commerce web app with basic features",
             "images": [
@@ -23,7 +23,7 @@
         } , 
         {
             "id": 1,
-            "img": "./ali-chat.jpg",
+            "img": "./ali-chat.JPG",
             "title": "ALi Chat Application",
             "summary": "This is an MERN chat application with several basic chat features",
             "images": [
@@ -33,7 +33,7 @@
             "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
         } ,  {
             "id": 2,
-            "img": "./ice-cream.jpg",
+            "img": "./ice-cream.JPG",
             "title": "Ice cream font-end",
             "summary": "A final project of Web 1 subject in my syllabus",
             "images": [
@@ -53,7 +53,7 @@
             "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
         },  {
             "id": 5,
-            "img": "./memories.jpg",
+            "img": "./memories.JPG",
             "title": "Memories  Social Application",
             "summary": "A MERN stack app allow people create and share their own memories",
             "images": [
