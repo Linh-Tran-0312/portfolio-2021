@@ -1,0 +1,103 @@
+{
+    "nav": {
+        "about": "About",
+        "projects": "Projects",
+        "skills": "Skills",
+        "experience": "Experience"
+    },
+    "about": {
+        "greeting": "Hi, I'm Linh",
+        "introduction": "<p>After 2 years of working in Biotechnology field, I realized this is not my passion and I decided to start over again in Software Development industry.</p><p>Intrigued by curiosity and creativity in building interesting applications, I know that I chose the right path.</p><p>Seeking to work in an environment that will help me improve my knowledge and develop my skills in Web Development Process, while allowing me to contribute to the continued growth and success of your organization.</p><p>Contact me via 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1qeHHphQligTbpocFSGlDzrb9Ky6C4tT-/view?usp=sharing' target='_blank'style='text-decoration: none'>View my CV</a></p>"
+    },
+    "projects": [
+        {
+            "id": 3,
+            "img": "./belle-shop.jpg",
+            "title": "Belle E-commerce",
+            "summary": "This is an fullstack e-commerce web app with basic features",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        } , 
+        {
+            "id": 1,
+            "img": "./ali-chat.jpg",
+            "title": "ALi Chat Application",
+            "summary": "This is an MERN chat application with several basic chat features",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        } ,  {
+            "id": 2,
+            "img": "./ice-cream.jpg",
+            "title": "Ice cream font-end",
+            "summary": "A final project of Web 1 subject in my syllabus",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        }, {
+            "id": 4,
+            "img": "./asp-api.png",
+            "title": "ASP.NET WEB API",
+            "summary": "A basic CRUD API coded on ASP.NET Core ",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        },  {
+            "id": 5,
+            "img": "./memories.jpg",
+            "title": "Memories  Social Application",
+            "summary": "A MERN stack app allow people create and share their own memories",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        },  {
+            "id": 6,
+            "img": "./jenkins.jpg",
+            "title": "DevOps Final Project",
+            "summary": "This is an final project for DevOps Course in SimpleLearn",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        }
+    ],
+    "skills": {
+        "language": {
+            "title": "English",
+            "details": "<ul><li>Basic communication skills</li><li>Reading Comprehension materials</li><li>TOEIC certificate with score 915 issued by ETS</li></ul>"
+        },
+        "technical": {
+            "title": "Technical Skills",
+            "details":"<ul><li>HTML, CSS, JS </li><li>ReactJS, NodeJS and Typescript</li><li>Unit test with Jest</li><li>Basic knowledge with MySQL, MongoDB, Postgre</li><li>Familiar with C# (ASP.NET)</li><li>Basic knowledge with Agile and Scrum Method</li><li>AWS services: EC2, S3, Elastics </li><li>Basic knowledge with Docker, Kubernets </li><li>Can apply CI/CD with Jenkin and GitLab</li></ul>"
+        }
+    },
+    "experience": [
+        {
+            "period": "2014-2018",
+            "position": "Study Biotechnology",
+            "company": "Ho Chi Minh Univeristy of Science"
+        },
+        {
+            "period": "2018-2020",
+            "position": "Field Application Scientist",
+            "company": "Biomedic Join Stock Company"
+        },
+        {
+            "period": "2020 onwards",
+            "position": "Study Information Technology ",
+            "company": "Ho Chi Minh Univeristy of Science"
+        }
+    ]
+}
