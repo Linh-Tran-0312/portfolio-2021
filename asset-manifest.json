@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/my_prortfolio_2021/static/css/main.7d1cb66f.chunk.css",
-    "main.js": "/my_prortfolio_2021/static/js/main.a4043c80.chunk.js",
-    "main.js.map": "/my_prortfolio_2021/static/js/main.a4043c80.chunk.js.map",
-    "runtime-main.js": "/my_prortfolio_2021/static/js/runtime-main.d27be8d8.js",
-    "runtime-main.js.map": "/my_prortfolio_2021/static/js/runtime-main.d27be8d8.js.map",
-    "static/css/2.773c9450.chunk.css": "/my_prortfolio_2021/static/css/2.773c9450.chunk.css",
-    "static/js/2.de35041c.chunk.js": "/my_prortfolio_2021/static/js/2.de35041c.chunk.js",
-    "static/js/2.de35041c.chunk.js.map": "/my_prortfolio_2021/static/js/2.de35041c.chunk.js.map",
-    "index.html": "/my_prortfolio_2021/index.html",
-    "static/css/2.773c9450.chunk.css.map": "/my_prortfolio_2021/static/css/2.773c9450.chunk.css.map",
-    "static/css/main.7d1cb66f.chunk.css.map": "/my_prortfolio_2021/static/css/main.7d1cb66f.chunk.css.map",
-    "static/js/2.de35041c.chunk.js.LICENSE.txt": "/my_prortfolio_2021/static/js/2.de35041c.chunk.js.LICENSE.txt"
+    "main.css": "/my_portfolio_2021/static/css/main.7d1cb66f.chunk.css",
+    "main.js": "/my_portfolio_2021/static/js/main.a4043c80.chunk.js",
+    "main.js.map": "/my_portfolio_2021/static/js/main.a4043c80.chunk.js.map",
+    "runtime-main.js": "/my_portfolio_2021/static/js/runtime-main.91201192.js",
+    "runtime-main.js.map": "/my_portfolio_2021/static/js/runtime-main.91201192.js.map",
+    "static/css/2.773c9450.chunk.css": "/my_portfolio_2021/static/css/2.773c9450.chunk.css",
+    "static/js/2.de35041c.chunk.js": "/my_portfolio_2021/static/js/2.de35041c.chunk.js",
+    "static/js/2.de35041c.chunk.js.map": "/my_portfolio_2021/static/js/2.de35041c.chunk.js.map",
+    "index.html": "/my_portfolio_2021/index.html",
+    "static/css/2.773c9450.chunk.css.map": "/my_portfolio_2021/static/css/2.773c9450.chunk.css.map",
+    "static/css/main.7d1cb66f.chunk.css.map": "/my_portfolio_2021/static/css/main.7d1cb66f.chunk.css.map",
+    "static/js/2.de35041c.chunk.js.LICENSE.txt": "/my_portfolio_2021/static/js/2.de35041c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d27be8d8.js",
+    "static/js/runtime-main.91201192.js",
     "static/css/2.773c9450.chunk.css",
     "static/js/2.de35041c.chunk.js",
     "static/css/main.7d1cb66f.chunk.css",
