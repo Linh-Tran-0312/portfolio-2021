@@ -1,17 +1,19 @@
 
-import { useState, useEffect } from 'react';
-import { Navbar, Nav, Container, Row, Col, Image, Card, Button, ButtonGroup, Spinner } from 'react-bootstrap';
+import { useState, useEffect, useRef } from 'react';
+import { Navbar, Nav, Container, Row, Col, Image, Card, Button, Form, ButtonGroup, Spinner } from 'react-bootstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fab, faHtml5 } from '@fortawesome/free-brands-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import CardProject from './components/ProjectCard';
 import BgAnimation from './components/BgAnimation';
 import parse from 'html-react-parser';
+import ScrollAnimation from 'react-animate-on-scroll';
+import emailjs from 'emailjs-com';
 import './animate.css';
 library.add(fab, fas);
 
@@ -22,15 +24,24 @@ const getData = async (path) => {
 
 
 }
-
+const initMessage = {
+    message : "",
+    type: true
+}
+const logo = ["react.png", "nodejs.png", "docker.png", "csharp.png", "githubaction.png", "github.png", "typescript.png", "jest.png", "mui.png"]
 const App = () => {
     const [data, setData] = useState("");
     const [eng, setEng] = useState(true);
+    const [font, setFont] = useState("");
+    const [ message, setMessage ] = useState(initMessage)
+    const sectionRef = useRef([]);
+    const form = useRef();
 
     useEffect(() => {
         (async () => {
             let temp = "";
             if (eng) {
+                setFont("fontCaliReg")
                 temp = await getData('portfolio_eng.json');
                 if (data) {
                     setData(temp);
@@ -39,15 +50,40 @@ const App = () => {
                 }
 
             } else {
+                setFont("")
                 temp = await getData('portfolio_vn.json');
                 setData(temp);
             }
         })()
 
     }, [eng])
+
+    const handleScroll = (value) => {
+        sectionRef.current[value].scrollIntoView();
+    }
     const handleChangeLanguage = (e) => {
         setEng(preState => !preState)
     }
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_USER_ID)
+            .then((result) => {
+                console.log(result.text);
+                setMessage({ message: data.message.success, type: true});
+                setTimeout(() => {
+                    setMessage({...message, message: ""})
+                },10000)
+            }, (error) => {
+                setMessage({ message: data.message.error, type: false});
+                setTimeout(() => {
+                    setMessage({...message, message: ""})
+                },10000)
+                console.log(error.text);
+            });
+
+            form.current.reset();
+    };
     if (!data) return (
         <Container className="fadeIn loading d-flex flex-column justify-content-center align-items-center">
             <h1>Welcome to my site</h1>
@@ -55,18 +91,19 @@ const App = () => {
         </Container>
     )
     return (
-        <div className="page fadeIn">
-            <a id="about"/>
-            <Navbar bg="light" variant="light" expand="sm" sticky="top">
+        <div className={`page fadeIn  ${font}`}>
+            <BgAnimation />
+
+            <Navbar className=' border-bottom bg-white d-flex flex-row align-items-center' expand="md" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#about" className="text-dark h5">LINH TRAN</Navbar.Brand>
+                    <Navbar.Brand href="#about" className="h5 fontCali pt-3">LINH TRAN</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
-                        <Nav className="me-auto text-center h6">
-                            <Nav.Link href="#about">{data.nav.about}</Nav.Link>
-                            <Nav.Link href="#projects">{data.nav.projects}</Nav.Link>
-                            <Nav.Link href="#skills">{data.nav.skills}</Nav.Link>
-                            <Nav.Link href="#experience">{data.nav.experience}</Nav.Link>
+                        <Nav className="me-auto text-center h6 font-bold">
+                            <Nav.Link href="#" onClick={() => handleScroll(0)}><strong>{data.nav.about}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(1)}><strong>{data.nav.projects}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(2)}><strong>{data.nav.skills}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(3)}><strong>{data.nav.experience}</strong></Nav.Link>
                             <Nav className="d-flex flex-row justify-content-center">
                                 <Nav.Link target="_blank" href="https://github.com/Linh-Tran-0312" className="mx-2"><Icon icon={['fab', 'github']} size="lg" /></Nav.Link>
                                 <Nav.Link target="_blank" href="https://www.linkedin.com/in/ch%C3%AD-linh-tr%E1%BA%A7n-a54928200/" className="mx-2"><Icon icon={['fab', 'linkedin']} size="lg" /></Nav.Link>
@@ -75,124 +112,171 @@ const App = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Container  className="d-flex justify-content-center align-items-center " style={{ minHeight: 'calc(100vh - 60px)' }}>
-                <Row >
-                    <Col xs={12} lg={5} sm={6} className="  slideInDown my-3 d-flex align-items-center justify-content-center">
+            <Container ref={(ref) => { sectionRef.current[0] = ref }} className="d-flex scroll justify-content-center align-items-center container" style={{ minHeight: 'calc(100vh - 60px)' }} >
+                <Row className="container bg-white p-5 mt-2" >
+                    <Col xs={12} lg={5} sm={12} className="  slideInDown my-3 d-flex align-items-center justify-content-center">
                         <Image src="ava1.jpg" className="img-ava" />
                     </Col>
-                    <Col xs={12} lg={7} sm={6} className="my-3">
-                        <h3>{data.about.greeting}</h3>
+                    <Col xs={12} lg={7} sm={12} className="my-3">
+                        <h3 className="fontCali">{data.about.greeting}</h3>
                         {parse(data.about.introduction)}
-                        <BgAnimation />
                     </Col>
                 </Row>
-
             </Container >
-            <a id="projects" />
-             
-            <Container fluid className=" text-center  bg-light">
-                <Container  className=" text-center py-5 bg-light" >
-                    <h2 className="my-4">{data.nav.projects.toUpperCase()}</h2>
-                    <Row className="d-flex justify-content-center">
-                        {
-                            data.projects.map((project, index) => <CardProject key={index} project={project} />)
-                        }
-                    </Row>
-                </Container>
+
+            <Container ref={(ref) => { sectionRef.current[1] = ref }} fluid className='d-flex justify-content-center align-items-center scroll container text-center  my-5 bg-light'>
+                <Row className="d-flex justify-content-center container bg-white py-5 px-4">
+                    <Col xs={12} lg={3} md={4}>
+                        <h5 className="sectionTitle">
+                            <strong>
+                                {data.nav.projects.toUpperCase()}
+                            </strong>
+                        </h5>
+                    </Col>
+                    <Col xs={12} lg={9} md={8} className="d-flex justify-content-center container-fluid bg-white">
+                        <Row className="d-flex justify-content-center container bg-white">
+                            {
+                                data.projects.map((project, index) => <CardProject key={index} project={project} />)
+                            }
+                        </Row>
+                    </Col>
+                </Row>
             </Container>
-      
-            <a id="skills" />
-            <Container className=" text-center py-5"  style={{ minHeight: 'calc(100vh - 60px)' }}>
-                <h2 className="my-5">{data.nav.skills.toUpperCase()}</h2>
-                <Row className="container">
-                    <Col lg={6} xs={12} className="text-start">
-                        <h4>{data.skills.language.title}</h4>
+
+            <Container ref={(ref) => { sectionRef.current[2] = ref }} id="skills" className="container d-flex justify-content-center align-items-center  text-center my-5 scroll">
+                <Row className="d-flex justify-content-center container bg-white py-5 px-4">
+                    <Col xs={12} lg={3} md={4} >
+                        <h5 className="sectionTitle">
+                            <strong>
+                                {data.nav.skills.toUpperCase()}
+                            </strong>
+                        </h5>
+                    </Col>
+                    <Col xs={12} lg={4} md={8} className="text-start ">
+                        <h6 className="text-start">
+                            <strong>{data.skills.technical.title.toUpperCase()}</strong>
+                        </h6>
+                        {parse(data.skills.technical.details)}
+                        <h6 className="text-start">
+                            <strong>  {data.skills.language.title.toUpperCase()}</strong>
+
+                        </h6>
                         {parse(data.skills.language.details)}
                     </Col>
-                    <Col lg={6} xs={12} className="text-start">
-                        <h4>{data.skills.technical.title}</h4>
-                        {parse(data.skills.technical.details)}
+                    <Col lg={5} className="">
+                        <Row >
+                            {
+                                logo.map(i => <Col key={i} xs={4} className="p-2 py-3">
+                                    <ScrollAnimation offset={500} animateIn='zoomIn'
+                                        animateOut='fadeOut'>
+                                        <img alt="logo" src={i} className="logo" />
+                                    </ScrollAnimation>
+
+                                </Col>)
+                            }
+                        </Row>
                     </Col>
                 </Row>
             </Container>
-           
-            {/*  <Container className=" text-center my-5" >
-                <h2 className="my-3">{data.nav.experience.toUpperCase()}</h2>
-                <Row className="d-flex justify-content-center align-items-center">
-                    {
-                        data.experience.map((e, index) => <Col key={index} lg={4} xs={12} className="my-2 d-flex justify-content-center align-items-center">
-                            <Card className="mx-2" style={{ width: '300px', minHeight: '150px' }}>
-                                <Card.Header className="h5">{e.period}</Card.Header>
-                                <Card.Body>
-                                    <blockquote className="blockquote mb-0">
-                                        <p>
-                                            {e.position}
-                                        </p>
-                                        <p className="blockquote-footer">
-                                            {e.company}
-                                        </p>
-                                    </blockquote>
-                                </Card.Body>
-                            </Card>
 
-                        </Col>)
-                    }
+            <Container ref={(ref) => { sectionRef.current[3] = ref }} className="container d-flex justify-content-center align-items-center scroll text-center my-5">
+                <Row className="d-flex justify-content-center container bg-white py-5 px-4">
+                    <Col xs={12} lg={3} md={4} >
+                        <h5 className="sectionTitle my-2">
+                            <strong>
+                                {data.nav.experience.toUpperCase()}
+                            </strong>
+                        </h5>
+                    </Col>
+                    <Col xs={12} lg={6} md={8} className="text-start ">
+                        {
+                            data.experience.reverse().map(e =>
+                                <Row key={e.period}>
+                                    <Col lg={3} sm={12}>
+                                        <p className="">{e.period}</p>
+                                    </Col>
+                                    <Col lg={9} sm={12}>
+                                        <h6 className=""><strong>{e.company}</strong></h6>
+                                        <p className="">{e.position}</p>
+                                    </Col>
+                                </Row>)
+                        }
 
+                    </Col>
+                    <Col lg={3} className="">
+                        <ScrollAnimation offset={500} animateIn='bounceInRight'
+                            animateOut='fadeOut'>
+                            <img alt="logo" src="hcmus.png" className="hcmus" />
+                        </ScrollAnimation>
+                    </Col>
                 </Row>
-            </Container> */}
-            <a id="experience"/>
-            <Container fluid className="bg-light py-5">
-            <h2 className="my-4 text-center">{data.nav.experience.toUpperCase()}</h2>
-                <VerticalTimeline>
-                   <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2020 onwards"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', textAlign: "center",color: '#fff' }}
-                        icon={<Icon icon={['fas','graduation-cap']} size="lg"/>}
-
-                    >
-                          <h3 className="vertical-timeline-element-title">Bachelor of Science in Information Technology</h3>
-                        <h5 className="vertical-timeline-element-subtitle">Bachelor Degree</h5>
-                        <p  className="blockquote-footer">
-                           Ho Chi Minh University of Science
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2018 - 2020"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', textAlign: "center", color: '#fff' }}
-                        icon={<Icon icon={['fas','briefcase']} size="lg"/>}
-                    >
-                        <h3 className="vertical-timeline-element-title">Field Application Scientist</h3>
-                        <h5 className="vertical-timeline-element-subtitle">Customer Service</h5>
-                        <p className="blockquote-footer">
-                           Biomedic Join Stock Company
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="2014 - 2018"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', textAlign: "center", color: '#fff' }}
-                        icon={<Icon icon={['fas','graduation-cap']}  size="lg"/>}
-                    >
-                        <h3 className="vertical-timeline-element-title">Bachelor of Science in Biotechnology</h3>
-                        <h5 className="vertical-timeline-element-subtitle">Bachelor Degree</h5>
-                        <p  className="blockquote-footer">
-                           Ho Chi Minh University of Science
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        iconStyle={{ background: 'rgb(16, 204, 82)', textAlign: "center", color: '#fff' }}
-                        icon={<Icon icon={['fas','star']}  size="lg"/>}
-                    />
-                </VerticalTimeline>
             </Container>
+
+            <Container className="container d-flex justify-content-center align-items-center  text-center my-5">
+                <Row className="d-flex justify-content-center container bg-white py-5 px-4">
+                    <Col xs={12} lg={3} md={4} >
+                        <h5 className="sectionTitle">
+                            <strong>
+                                {data.nav.contact.toUpperCase()}
+                            </strong>
+                        </h5>
+                    </Col>
+                    <Col xs={12} lg={9} md={8} className="text-start ">
+                        {
+                            data.contact.map(e =>
+                                <Row key={e.period}>
+                                    <Col lg={2} sm={12}>
+                                        <p className="">{e.type}</p>
+                                    </Col>
+                                    <Col lg={10} sm={12}>
+                                        <h6 className=""><strong>{e.details}</strong></h6>
+                                    </Col>
+                                </Row>)
+                        }
+                        <Row>
+                            <Col lg={2} sm={12}>
+                                <p className="">{eng ? "Message" : "Tin nhắn"}</p>
+                            </Col>
+                            <Col lg={10} sm={12}>
+                                <Form ref={form} onSubmit={sendEmail}>
+                                    <Row>
+                                        <Col lg={6} sm={12}>
+                                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                                <Form.Label>{eng ? "Subject" : "Tiêu đề"}</Form.Label>
+                                                <Form.Control type="text" placeholder="" name="subject" required/>
+                                            </Form.Group>
+                                        </Col>
+                                        <Col lg={6} sm={12}>
+                                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                                <Form.Label>{eng ? "Your Email" : "Email"}</Form.Label>
+                                                <Form.Control type="email" placeholder="" name="email" required />
+                                            </Form.Group>
+                                        </Col>
+                                        <Col lg={12} sm={12}>
+                                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                                <Form.Label>{eng ? "Your Message" : "Nội dung"}</Form.Label>
+                                                <Form.Control as="textarea" rows={3} name="message" required/>
+                                            </Form.Group>
+                                        </Col>
+                                        <Col lg={12} className="d-flex justify-content-between">
+                                            <p className={ message.type ? "text-success" : "text-danger"}>{message.message}</p>                                         
+                                                <Button variant="secondary" type="submit">{eng ? "Submit" : "Gửi"}</Button>                                           
+                                        </Col>
+                                    </Row>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
+
             <ButtonGroup className="language" vertical>
-                <Button variant="outline-secondary" className="bg-light"><a href="#about" className="text-secondary"><Icon icon={['fas', 'chevron-up']} /></a></Button>
+                <Button variant="outline-secondary" className="bg-light" onClick={() => handleScroll(0)}><Icon icon={['fas', 'chevron-up']} /></Button>
                 <Button variant="outline-secondary" onClick={handleChangeLanguage} className="bg-light">{eng ? 'VIET' : 'ENG'}</Button>
             </ButtonGroup>
-            <Container fluid className="bg-light text-center py-3 ">
-                <h6>Created by Tran Chi Linh</h6>
+            <Container fluid className="bg-white border-top text-center py-3 ">
+                <h3 className="fontCookie"> Thanks for visiting my site</h3>
+                <h6 className=" font-bold">Created by Tran Chi Linh</h6>
             </Container>
         </div>
     )

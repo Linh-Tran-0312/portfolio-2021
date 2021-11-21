@@ -1,9 +1,10 @@
 {
     "nav": {
         "about": "Giới Thiệu",
-        "projects": "Dự Án",
+        "projects": "Dự Án Cá Nhân",
         "skills": "Kỹ Năng",
-        "experience": "Kinh Nghiệm"
+        "experience": "Kinh Nghiệm",
+        "contact":"Liên Hệ"
     },
     "about": {
         "greeting": "Xin chào, Tôi là Linh",
@@ -11,45 +12,36 @@
     },
     "projects": [
         {
+            "id": 3,
+            "img": "./belle-shop.jpg",
+            "title": "Ứng dụng Belle E-commerce",
+            "summary": "Một ứng dụng web thương mại với mô hình cliet-server",
+            "images": [
+                "./ali-chat.jpg",
+                "./ali-chat.jpg"
+            ],
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+        } , 
+        {
             "id": 1,
             "img": "./ali-chat.jpg",
-            "title": "Ứng dụng ALi Chat ",
-            "summary": "Đây là ứng dụng chát sử dụng MERN stack do mình thiết kế và code với các chức năng cơ bản.",
+            "title": "Ứng dụng ALi Chat",
+            "summary": "Đây là ứng dụng chat sử dụng MERN stack với những chức năng cơ bản",
             "images": [
                 "./ali-chat.jpg",
                 "./ali-chat.jpg"
             ],
-            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
-        },  {
-            "id": 2,
-            "img": "./ali-chat.jpg",
-            "title": "ALi Chat Application",
-            "summary": "This is an MERN chat application with several features such as single-chat and group-chat",
-            "images": [
-                "./ali-chat.jpg",
-                "./ali-chat.jpg"
-            ],
-            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
-        },  {
-            "id": 3,
-            "img": "./ali-chat.jpg",
-            "title": "ALi Chat Application",
-            "summary": "This is an MERN chat application with several features such as single-chat and group-chat",
-            "images": [
-                "./ali-chat.jpg",
-                "./ali-chat.jpg"
-            ],
-            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
-        }
+            "description": "<h4>Chức năng</h4><ul>   <li>Đăng nhập, đăng ký và đăng nhập với tài khoản Google và Facebook.</li><li>Quản lý tài khoản: cho phép cập nhật tên, username, ảnh đại diện và giới thiệu bản thân.</li><li>Tìm kiếm người dùng thông qua tên tài khoản.</li><li>Tính năng nhắn tin: có thể gửi tin nhắn văn bản, hình ảnh và emoji.</li><li>Cho phép người dùng trả lời một tin nhắn khác.</li><li>Có nhắn tin riêng hoặc nhắn tin theo nhóm.</li><li>Tính năng nhóm: người tạo nhóm có thể thêm và loại bỏ các thành viên trong nhóm, thanh viên có thể tự rời khỏi nhóm</li></ul><h4>Ngôn ngữ và thư viện sử dụng</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4></h4>"
+        } 
     ],
     "skills": {
         "language": {
             "title": "Tiếng Anh",
-            "details": "<ul><li>Giao tiếp cở bản</li><li>Khả năng đọc hiểu tài liệu chuyên môn</li><li>Chứng chỉ TOEIC 915 được cấp bởi ETS</li></ul>"
+            "details": "<ul><li>Giao tiếp cơ bản</li><li>Khả năng đọc hiểu tài liệu chuyên môn</li><li>Chứng chỉ TOEIC 915 được cấp bởi ETS</li></ul>"
         },
         "technical": {
             "title": "Kỹ năng Chuyên môn",
-            "details":" <ul><li>HTML, CSS, JS </li><li>ReactJS, NodeJS and Typescript</li><li>Unit test with Jest</li><li>Basic knowledge with MySQL, MongoDB, Postgre</li><li>Familiar with C# (ASP.NET)</li><li>Basic knowledge with Agile and Scrum Method</li><li>AWS services: EC2, S3, Elastics </li><li>Basic knowledge with Docker, Kubernets </li><li>Can apply CI/CD with Jenkin and GitLab</li></ul>"
+            "details":" <ul><li>Biết sử dụng HTML, CSS, JS </li><li>Kiến thức với ReactJS và NodeJS(Typescript)</li><li>Có thể viết Unit test với Jest và Supertest cho Rest API</li><li>Có khả năng sử dụng C# và kiến thức OOP</li><li>Thao tác cơ bản với Docker</li><li>Có thể thực hiện CI/CD với Github Action</li></ul>"
         }
     },
     "experience": [
@@ -68,5 +60,23 @@
             "position": "Ngành Công nghệ Thông tin ",
             "company": "Đại Học Khoa Học Tự Nhiên, Thành Phố Hồ Chí Minh"
         }
-    ]
+    ],
+    "contact": [
+        {
+            "type": "Địa  chỉ",
+            "details": "551 Lê Văn Khương, quận 12, thành phố Hồ Chí Minh"
+        },
+        {
+            "type": "Điện thoại",
+            "details": "0986772823"
+        },
+        {
+            "type": "Email",
+            "details": "linhtran.atwork@gmail.com"
+        }
+    ],
+    "message": {
+        "success": "Cảm ơn đã liên hệ với tôi. Tôi sẽ phản hồi bạn trong thời gian sớm nhất có thể.",
+        "error":"Oops. Đã xảy ra lỗi, vui lòng thử lại."
+    }
 }

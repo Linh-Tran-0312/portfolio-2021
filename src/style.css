@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Poppins&display=swap');
+@font-face {
+  font-family: "Calibre";
+  src: url("./font/CalibreBold.otf") format('opentype');
+} 
+@font-face {
+  font-family: "Calibre-Regular";
+  src: url("./font/CalibreLight.otf") format('opentype');
+} 
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  
 }
 .loading {
     width: 100vw;
@@ -28,6 +39,7 @@ body {
 }
 .page {
     position: relative;
+    background-color: #f8f9fa;
 }
 
 .language {
@@ -105,4 +117,47 @@ body {
   40% {
     box-shadow: 0 2.5em 0 0;
   }
+}
+
+.bgDarkPrimary {
+  background-color: #031b1c;
+}
+.bgDarkSecondary {
+  background-color: #142a2b;
+}
+
+.textLight {
+  color: white !important
+}
+.sectionTitle {
+  font-weight: 400;
+}
+.fontCali {
+  font-family:  'Calibre', sans-serif;
+}
+.fontCaliReg {
+  font-family:  'Calibre-Regular', sans-serif;
+  letter-spacing: 0.05em;
+}
+@media only screen and (max-width: 600px) {
+  .sectionTitle {
+    font-weight: 400;
+    text-align: center;
+  }
+}
+.scroll {
+  scroll-margin: 100px;
+}
+.logo {
+  width: 70px;
+  height:  70px;
+  object-fit: cover;
+}
+.hcmus {
+  width: 180px;
+  height:  150px;
+  object-fit: cover;
+}
+.fontCookie {
+  font-family: "Cookie";
 }
