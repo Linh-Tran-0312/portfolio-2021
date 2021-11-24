@@ -16,11 +16,29 @@ body {
     width: 100vw;
     height: 100vh;
 }
-.img-ava {
-    object-fit: cover;
+.img-ava-container {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    background-image: url("./img/ava2.jpg");
+    background-position:center;
+    background-size: cover;
+}
+.img-ava {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 1;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.img-ava:hover {
+  opacity: 0;
+  animation: fadeOutAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .img-project {
     height: 150x !important;
@@ -60,7 +78,14 @@ body {
         opacity: 1;
     }
 }
-
+@keyframes fadeOutAnimation {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
 .loader,
 .loader:before,
 .loader:after {
@@ -160,4 +185,94 @@ body {
 }
 .fontCookie {
   font-family: "Cookie";
+}
+.change-bg:hover {
+  color: #a6b7d7;
+  font-weight: 600;
+  cursor: pointer;
+}
+.moon {
+  transform: rotate(-30deg);
+  cursor: pointer;
+}
+.moon:hover {
+  cursor: pointer;
+ color: #a6b7d7;
+ transform: rotate(-70deg);
+}
+
+.arrButton {
+  visibility: hidden;
+}
+.arrButton:hover {
+  visibility: visible;
+  
+}
+.lanButton:hover {
+  background-color: white;
+  color: gray;
+}
+.language:hover .arrButton {
+  visibility: visible!important;
+  animation-name: floating;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  background-color: white;
+  color: gray;
+}
+ 
+
+@keyframes floating {
+  from { transform: translate(0,  -0px); }
+  65% { transform: translate(0, -15px); }
+  to{ transform: translate(0, 0px); }
+  
+}
+.fontLg {
+  font-size: 70px;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+ .activeSection {
+   display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+.activeSection:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+ 
+} 
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  
+}
+.navLink:hover {
+  color: #0087ca !important;
 }

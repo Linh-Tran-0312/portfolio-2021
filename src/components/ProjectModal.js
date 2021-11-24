@@ -1,34 +1,35 @@
-import React from 'react';
-import { Button, Modal, Carousel, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style.css';
-import parse from 'html-react-parser';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import parse from 'html-react-parser';
+import React from 'react';
+import { Button, Carousel, Container, Modal } from 'react-bootstrap';
+import '../style.css';
 
 library.add(fab, fas);
 
 function MyVerticallyCenteredModal(props) {
     
     return (
-        <Modal
+    <Modal
              {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
+       
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                   {props.project.title}
+                   {props.detail.title}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Carousel  >
                     {
-                        props.project.images.map((src, index) => 
-                        <Carousel.Item>
+                        props.detail.images.map((src, index) => 
+                        <Carousel.Item key={index}>
                         <img
                             className="d-block w-100"
                             src={src}
@@ -45,7 +46,7 @@ function MyVerticallyCenteredModal(props) {
                 
                 </Carousel>
                 <Container className="my-3 px-4">
-                    {parse(props.project.description)}
+                    {parse(props.detail.description)}
                     <Container className="d-flex justify-content-center">
                         <Button variant="info" className="mx-2 text-white"><Icon icon={['fas','external-link-square-alt']}  size="lg" />&nbsp; Demo</Button>
                       
@@ -56,7 +57,7 @@ function MyVerticallyCenteredModal(props) {
             <Modal.Footer className="d-flex justify-content-center">
                 <Button variant="secondary" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
-        </Modal>
+    </Modal>        
     );
 }
 
@@ -72,7 +73,7 @@ const ProjectModal = ({ project}) => {
             <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-                project={project}
+                detail={project}
             />
         </>
     )
