@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import parse from 'html-react-parser';
 import React from 'react';
 import { Button, Carousel, Container, Modal } from 'react-bootstrap';
-import '../style.css';
+import '../style.scss';
 
 library.add(fab, fas);
 

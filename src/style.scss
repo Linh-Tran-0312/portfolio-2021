@@ -8,9 +8,41 @@
   font-family: "Calibre-Regular";
   src: url("./font/CalibreLight.otf") format('opentype');
 } 
+
+ 
+
+
 body {
   box-sizing: border-box;
   
+}
+$color-black: rgb(0,0,0);
+$color-white: rgb(255,255,255);
+$color-blue: #0d6efd;
+$color-gray: rgb(156, 156, 156);
+$color-transparent : rgba(0,0,0,0);
+$color-gray-light: rgba($color-white, .15);
+$color-gray-dark: rgba(7,21,36,0.9);
+$color-black-dark: rgba(7,21,36,0.9);
+:root {
+  --color-background: #{$color-white};
+  --color-text: #{$color-black};
+  --color-nav: #{$color-black};
+  --color-nav-active: #{$color-blue};
+  --color-wrapper: #{$color-transparent};
+  --color-nv-bg:  #{$color-white};
+  --color-util-button: #{$color-white};
+ 
+}
+
+.dark-mode {
+  --color-background: #{$color-gray-dark};
+  --color-text: #{$color-white};
+  --color-nav: #{$color-gray};
+  --color-nav-active: #{$color-white};
+  --color-wrapper: #{$color-gray-dark};
+  --color-nv-bg:  #{$color-black-dark};
+  --color-util-button: #{$color-white};
 }
 .loading {
     width: 100vw;
@@ -192,25 +224,27 @@ body {
   cursor: pointer;
 }
 .moon {
-  transform: rotate(-30deg);
+  transform: rotate(-40deg);
   cursor: pointer;
 }
-.moon:hover {
-  cursor: pointer;
- color: #a6b7d7;
- transform: rotate(-70deg);
-}
+ 
 
+.lanButton {
+  visibility: hidden;
+}
 .arrButton {
   visibility: hidden;
 }
+.lanButton:hover {
+  visibility: visible;
+  color:var(--color-util-button);
+}
 .arrButton:hover {
   visibility: visible;
-  
+  color:var(--color-util-button);
 }
-.lanButton:hover {
-  background-color: white;
-  color: gray;
+.lightButton:hover {
+  color: var(--color-util-button);
 }
 .language:hover .arrButton {
   visibility: visible!important;
@@ -218,8 +252,11 @@ body {
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  background-color: white;
-  color: gray;
+ 
+
+}
+.language:hover .lanButton {
+  visibility: visible!important;
 }
  
 
@@ -237,23 +274,26 @@ body {
   position: relative;
 
 }
+.hover-underline-animation:hover {
+  color: var(--color-nav-active);
 
+}
 .hover-underline-animation:after {
   content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
   height: 3px;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
-  background-color: #0087ca;
+  background-color: var(--color-nav-active);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
  .activeSection {
    display: inline-block;
   position: relative;
-  color: #0087ca;
+  color: var(--color-nav-active);
 }
 .activeSection:after {
   content: '';
@@ -263,9 +303,9 @@ body {
   transform-origin: bottom left;
   transition: transform 0.25s ease-out;
   height: 3px;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
-  background-color: #0087ca;
+  background-color: var(--color-nav-active);
  
 } 
 .hover-underline-animation:hover:after {
@@ -273,6 +313,21 @@ body {
   transform-origin: bottom left;
   
 }
+.navLink {
+  color: var(--color-nav) !important;
+}
 .navLink:hover {
-  color: #0087ca !important;
+  color: var(--color-nav-active) !important;
+}
+.bg-white {
+  background-color: var(--color-background) !important;
+}
+.dark-wrapper {
+  position: fixed;width: 100vw;height: 100vh;z-index: -1;background: var(--color-wrapper);
+}
+.text-color {
+  color: var(--color-text) !important;
+}
+.nav-bg  {
+  background-color: var(--color-nv-bg);
 }

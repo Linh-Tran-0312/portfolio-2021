@@ -12,8 +12,9 @@ import { Button, ButtonGroup, Col, Container, Form, Image, Nav, Navbar, Row } fr
 import './animate.css';
 import BgAnimation from './components/BgAnimation';
 import CardProject from './components/ProjectCard';
-import './style.css';
+import './style.scss';
 import { useInView } from "react-intersection-observer";
+import Typewriter from 'typewriter-effect';
 library.add(fab, fas);
 
 const getData = async (path) => {
@@ -23,40 +24,35 @@ const getData = async (path) => {
 const handleTime = () => {
     const now = new Date();
     const hour = now.getHours()
-    if(hour > 16 || hour < 5 ) return true;
+    if (hour > 16 || hour < 5) return true;
     return false
 }
+const handleGreeting = () => {
+    const now = new Date();
+    const hour = now.getHours();
+    if( hour > 5 && hour < 12) return "Good Morning !";
+    if( hour > 5 && hour < 17) return "Good Afternoon !";
+    else {
+       return "Good Evening !"
+    }
+}
 const initMessage = {
-    message : "",
+    message: "",
     type: true
 }
 const logo = ["react.png", "nodejs.png", "docker.png", "csharp.png", "githubaction.png", "github.png", "typescript.png", "jest.png", "mui.png"]
-const initSection = {
-    about: false,
-    projects: false,
-    skills: false,
-    experience: false
-}
-const initSec = [false,false,false,false];
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
+
 const App = () => {
     const [data, setData] = useState("");
     const [eng, setEng] = useState(true);
     const [font, setFont] = useState("");
-    const [ night, setNight] = useState(handleTime());
-    const [ message, setMessage ] = useState(initMessage);
-    const [ aboutRef, aboutInView ] = useInView({ threshold: 0.7 });
-    const [ projectRef, projectInView ] = useInView({ threshold: 0.5 });
-    const [ skillRef, skillInView ] = useInView({ threshold: 0.8 });
-    const [ experienceRef, experienceInView ] = useInView({ threshold: 0.8 });
+    const [night, setNight] = useState(handleTime());
+    const [message, setMessage] = useState(initMessage);
+    const [aboutRef, aboutInView] = useInView({ threshold: 0.7 });
+    const [skillRef, skillInView] = useInView({ threshold: 0.8 });
+    const [projectRef, projectInView] = useInView({ threshold: 0.5 });
+    const [experienceRef, experienceInView] = useInView({ threshold: 0.8 });
+    const greeting = handleGreeting()
     const form = useRef();
   
     useEffect(() => {
@@ -81,14 +77,22 @@ const App = () => {
     }, [eng])
     const handleChangeTime = (e) => {
         setNight(!night);
+       
     }
-    const handleScroll = (value) => {   
+    useEffect(() => {
+        if(!night) 
+        {
+            document.body.classList.remove('dark-mode');
+        } else {
+            document.body.classList.add('dark-mode');
+        }
+    },[night])
+    const handleScroll = (value) => {
         const section = parseInt(value);
-        document.getElementById(section).scrollIntoView({behavior: "smooth"})        
+        document.getElementById(section).scrollIntoView({ behavior: "smooth" })
+
     }
-    const handleInView = e => {
-         
-    }
+
     const handleChangeLanguage = (e) => {
         setEng(preState => !preState)
     }
@@ -98,19 +102,19 @@ const App = () => {
         emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_USER_ID)
             .then((result) => {
                 console.log(result.text);
-                setMessage({ message: data.message.success, type: true});
+                setMessage({ message: data.message.success, type: true });
                 setTimeout(() => {
-                    setMessage({...message, message: ""})
-                },10000)
+                    setMessage({ ...message, message: "" })
+                }, 10000)
             }, (error) => {
-                setMessage({ message: data.message.error, type: false});
+                setMessage({ message: data.message.error, type: false });
                 setTimeout(() => {
-                    setMessage({...message, message: ""})
-                },10000)
+                    setMessage({ ...message, message: "" })
+                }, 10000)
                 console.log(error.text);
             });
 
-            form.current.reset();
+        form.current.reset();
     };
     if (!data) return (
         <Container className="fadeIn loading d-flex flex-column justify-content-center align-items-center">
@@ -119,41 +123,64 @@ const App = () => {
         </Container>
     )
     return (
-        <div className={`page fadeIn  ${font}`} onScroll={handleInView}>
+        <div className={`page fadeIn  ${font} text-color`} >
             <BgAnimation night={night} />
-            <Navbar className=' border-bottom bg-white d-flex flex-row align-items-center' expand="md" style={{zIndex: 800}} sticky="top">
+            <Navbar className=' border-bottom nav-bg d-flex flex-row align-items-center' expand="md" style={{ zIndex: 800 }} sticky="top">
                 <Container>
-                    <Navbar.Brand href="/" className="h5 fontCali pt-3">LINH TRAN</Navbar.Brand>
+                    <Navbar.Brand href="/" className="h5 pl-2 fontCali pt-3 text-truncate text-color">
+                      LINH TRAN
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto text-center h6 font-bold">
-                            <Nav.Link href="#" onClick={() => handleScroll(0)} className="d-flex flex-column justify-content-center align-items-center"><strong className={aboutInView ? "activeSection" : "hover-underline-animation"}>{data.nav.about}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(1)}className="d-flex flex-column justify-content-center align-items-center"><strong className={projectInView? "activeSection" : "hover-underline-animation"}>{data.nav.projects}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(2)} className="d-flex flex-column justify-content-center align-items-center"><strong className={skillInView ? "activeSection" : "hover-underline-animation"}>{data.nav.skills}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(3)} className="d-flex flex-column justify-content-center align-items-center"><strong className={experienceInView ? "activeSection" : "hover-underline-animation"}>{data.nav.experience}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(0)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={aboutInView ? "activeSection" : "hover-underline-animation"}>{data.nav.about.toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(1)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={projectInView ? "activeSection" : "hover-underline-animation"}>{data.nav.projects.slice(4).toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(2)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={skillInView ? "activeSection" : "hover-underline-animation"}>{data.nav.skills.toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(3)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={experienceInView ? "activeSection" : "hover-underline-animation"}>{data.nav.experience.toUpperCase()}</strong></Nav.Link>
                             <Nav className="d-flex flex-row justify-content-center align-items-start">
-                                <Nav.Link target="_blank" href="https://github.com/Linh-Tran-0312" className="mx-2"><Icon icon={['fab', 'github']} size="lg" /></Nav.Link>
-                                <Nav.Link target="_blank" href="https://www.linkedin.com/in/ch%C3%AD-linh-tr%E1%BA%A7n-a54928200/" className="mx-2"><Icon icon={['fab', 'linkedin']} size="lg" /></Nav.Link>
+                                <Nav.Link target="_blank" href="https://github.com/Linh-Tran-0312" className="mx-2 navLink"><Icon icon={['fab', 'github']} size="lg" /></Nav.Link>
+                                <Nav.Link target="_blank" href="https://www.linkedin.com/in/ch%C3%AD-linh-tr%E1%BA%A7n-a54928200/" className="mx-2 navLink"><Icon icon={['fab', 'linkedin']} size="lg" /></Nav.Link>
                             </Nav>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Container ref={aboutRef}  id="0" className="d-flex scroll justify-content-center align-items-center container" style={{ minHeight: 'calc(100vh - 60px)' }} >
+            <Container ref={aboutRef} id="0" className="d-flex scroll justify-content-center align-items-center container" style={{ minHeight: 'calc(100vh - 60px)' }} >
                 <Row className="container bg-white p-5 mt-2" >
                     <Col xs={12} lg={5} sm={12} className="  slideInDown my-3 d-flex align-items-center justify-content-center">
                         <div className="img-ava-container">
-                        <Image src="ava3.jpg" className="img-ava" />
+                            <Image src="ava3.jpg" className="img-ava" />
                         </div>
                     </Col>
                     <Col xs={12} lg={7} sm={12} className="my-3">
-                        <h3 className="fontCali">{data.about.greeting}</h3>
+                        <h2 className="fontCali" style={{color:" #74879a"}}>
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter.changeDelay(75)
+                                    .changeDeleteSpeed(50)
+                                    .typeString(`<span style="color: #9dceff">${greeting}</span>`)                                  
+                                    .pauseFor(2500)
+                                    .deleteAll()
+                                    .typeString('<span style="color: #96a7b8">This is my portfolio site</span>')
+                                    .pauseFor(1500)
+                                    .deleteAll()
+                                    .typeString(`${data.about.greeting}`)
+                                    .pauseFor(4000)
+                                    .start()
+   
+                            }}
+                            options = {{
+                                loop: true
+                            }}                          
+                        />
+                           
+                            </h2>
                         {parse(data.about.introduction)}
                     </Col>
                 </Row>
             </Container >
 
-            <Container ref={projectRef}  id="1" fluid className='d-flex justify-content-center align-items-center scroll container text-center  my-5'>
+            <Container ref={projectRef} id="1" fluid className='d-flex justify-content-center align-items-center scroll container text-center  my-5'>
                 <Row className="d-flex justify-content-center  container bg-white py-5">
                     <Col xs={12} lg={3} md={4}>
                         <h5 className="sectionTitle">
@@ -162,8 +189,8 @@ const App = () => {
                             </strong>
                         </h5>
                     </Col>
-                    <Col xs={12} lg={9} md={8} className="d-flex justify-content-center container-fluid bg-white">
-                        <Row className="d-flex justify-content-center container bg-white">
+                    <Col xs={12} lg={9} md={8} className="d-flex justify-content-center container-fluid">
+                        <Row className="d-flex justify-content-center container">
                             {
                                 data.projects.map((project, index) => <CardProject key={index} project={project} />)
                             }
@@ -172,7 +199,7 @@ const App = () => {
                 </Row>
             </Container>
 
-            <Container ref={skillRef}   id="2" className="container d-flex justify-content-center align-items-center  text-center my-5 scroll">
+            <Container ref={skillRef} id="2" className="container d-flex justify-content-center align-items-center  text-center my-5 scroll">
                 <Row className="d-flex justify-content-center container bg-white py-5 px-4">
                     <Col xs={12} lg={3} md={4} >
                         <h5 className="sectionTitle">
@@ -208,7 +235,7 @@ const App = () => {
                 </Row>
             </Container>
 
-            <Container ref={experienceRef}  id="3" className="container d-flex justify-content-center align-items-center scroll text-center my-5">
+            <Container ref={experienceRef} id="3" className="container d-flex justify-content-center align-items-center scroll text-center my-5">
                 <Row className="d-flex justify-content-center container bg-white py-5 px-4">
                     <Col xs={12} lg={3} md={4} >
                         <h5 className="sectionTitle my-2">
@@ -219,12 +246,12 @@ const App = () => {
                     </Col>
                     <Col xs={12} lg={5} md={8} className="text-start ">
                         {
-                            data.experience.reverse().map((e,index) =>
+                            data.experience.map((e, index) =>
                                 <Row key={index}>
-                                    <Col lg={3} sm={12}>
+                                    <Col lg={4} sm={12}>
                                         <p className="">{e.period}</p>
                                     </Col>
-                                    <Col lg={9} sm={12}>
+                                    <Col lg={8} sm={12}>
                                         <h6 className=""><strong>{e.company}</strong></h6>
                                         <p className="">{e.position}</p>
                                     </Col>
@@ -252,7 +279,7 @@ const App = () => {
                     </Col>
                     <Col xs={12} lg={9} md={8} className="text-start ">
                         {
-                            data.contact.map((e,index) =>
+                            data.contact.map((e, index) =>
                                 <Row key={index}>
                                     <Col lg={2} sm={12}>
                                         <p className="">{e.type}</p>
@@ -272,7 +299,7 @@ const App = () => {
                                         <Col lg={6} sm={12}>
                                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                                 <Form.Label>{eng ? "Subject" : "Tiêu đề"}</Form.Label>
-                                                <Form.Control type="text" placeholder="" name="subject" required/>
+                                                <Form.Control type="text" placeholder="" name="subject" required />
                                             </Form.Group>
                                         </Col>
                                         <Col lg={6} sm={12}>
@@ -284,12 +311,12 @@ const App = () => {
                                         <Col lg={12} sm={12}>
                                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                                 <Form.Label>{eng ? "Your Message" : "Nội dung"}</Form.Label>
-                                                <Form.Control as="textarea" rows={3} name="message" required/>
+                                                <Form.Control as="textarea" rows={3} name="message" required />
                                             </Form.Group>
                                         </Col>
                                         <Col lg={12} className="d-flex justify-content-between">
-                                            <p className={ message.type ? "text-success" : "text-danger"}>{message.message}</p>                                         
-                                                <Button variant="secondary" type="submit">{eng ? "Submit" : "Gửi"}</Button>                                           
+                                            <p className={message.type ? "text-success" : "text-danger"}>{message.message}</p>
+                                            <Button variant="secondary" type="submit">{eng ? "Submit" : "Gửi"}</Button>
                                         </Col>
                                     </Row>
                                 </Form>
@@ -300,14 +327,15 @@ const App = () => {
             </Container>
 
             <ButtonGroup className="language" vertical>
-                <Button  variant="outline-secondary" className="arrButton" onClick={() => handleScroll(0)}><Icon icon={['fas', 'angle-double-up']} /></Button>
-                <Button variant="outline-secondary" className="lanButton" onClick={handleChangeLanguage}  >{eng ? 'VIET' : 'ENG'}</Button>
+                <Button variant="outline-secondary" className="arrButton" onClick={() => handleScroll(0)}><Icon icon={['fas', 'angle-double-up']} /></Button>
+                <Button variant="outline-secondary" className="lanButton" onClick={handleChangeLanguage}  ><strong>{eng ? 'VIET' : 'ENG'}</strong></Button>
+                <Button variant="outline-secondary" className="lightButton" onClick={handleChangeTime}>{ night ? <Icon icon={['fas', 'lightbulb']} size="lg" /> : <Icon icon={['fas', 'star-and-crescent']} size="lg" className="moon" /> }</Button>
             </ButtonGroup>
             <Container fluid className="bg-white border-top text-center pt-3 pb-2 ">
                 <h3 className="fontCookie"> Thanks for visiting my site </h3>
-                <h6 className=" font-bold">Created by Tran Chi Linh | <span className="change-bg"  onClick={handleChangeTime}><Icon icon={["fas","star-and-crescent"]} size="sm" className="moon" /> Change background</span></h6>
+                <h6 className=" font-bold">Created by Tran Chi Linh</h6>
             </Container>
-        </div> 
+        </div>
     )
 }
 

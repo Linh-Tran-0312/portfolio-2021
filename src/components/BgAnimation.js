@@ -1,8 +1,9 @@
 import React from 'react';
 
 const BackgroundAnimation = ({ night }) => (
-
-  <div style={{ position: 'fixed', width: "100vw", height: "100vh", zIndex: -1 }}>
+  <>
+  <div className="dark-wrapper"></div>
+  <div style={{ position: 'fixed', width: "100vw", height: "100vh", zIndex: -2 }}>
     {
       night ? (
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{margin:"auto",background:"#f1f2f3",display:"block",zIndex:1,position:"relative"}} width="1760" height="1032" preserveAspectRatio="xMidYMid" viewBox="0 0 1760 1032">
@@ -2628,6 +2629,7 @@ z" fill="none" stroke="none"></path>
       )
     }
   </div>
+  </>
 );
 
 export default BackgroundAnimation;
