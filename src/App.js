@@ -127,19 +127,19 @@ const App = () => {
             <BgAnimation night={night} />
             <Navbar className=' border-bottom nav-bg d-flex flex-row align-items-center' expand="md" style={{ zIndex: 800 }} sticky="top">
                 <Container>
-                    <Navbar.Brand href="/" className="h5 pl-2 fontCali pt-3 text-truncate text-color">
+                    <Navbar.Brand href="/" className="h5 pl-2 fontCali pt-3 text-truncate text-color pointer">
                       LINH TRAN
-                    </Navbar.Brand>
+                    </Navbar.Brand> 
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto text-center h6 font-bold">
-                            <Nav.Link href="#" onClick={() => handleScroll(0)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={aboutInView ? "activeSection" : "hover-underline-animation"}>{data.nav.about.toUpperCase()}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(1)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={projectInView ? "activeSection" : "hover-underline-animation"}>{data.nav.projects.slice(4).toUpperCase()}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(2)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={skillInView ? "activeSection" : "hover-underline-animation"}>{data.nav.skills.toUpperCase()}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(3)} className="d-flex flex-column justify-content-center align-items-center navLink"><strong className={experienceInView ? "activeSection" : "hover-underline-animation"}>{data.nav.experience.toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(0)} className="d-flex flex-column justify-content-center align-items-center navLink "><strong className={aboutInView ? "activeSection" : "hover-underline-animation pointer"}>{data.nav.about.toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(1)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={projectInView ? "activeSection" : "hover-underline-animation"}>{data.nav.projects.slice(4).toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(2)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={skillInView ? "activeSection" : "hover-underline-animation"}>{data.nav.skills.toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(3)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={experienceInView ? "activeSection" : "hover-underline-animation"}>{data.nav.experience.toUpperCase()}</strong></Nav.Link>
                             <Nav className="d-flex flex-row justify-content-center align-items-start">
-                                <Nav.Link target="_blank" href="https://github.com/Linh-Tran-0312" className="mx-2 navLink"><Icon icon={['fab', 'github']} size="lg" /></Nav.Link>
-                                <Nav.Link target="_blank" href="https://www.linkedin.com/in/ch%C3%AD-linh-tr%E1%BA%A7n-a54928200/" className="mx-2 navLink"><Icon icon={['fab', 'linkedin']} size="lg" /></Nav.Link>
+                                <Nav.Link target="_blank" href="https://github.com/Linh-Tran-0312" className="mx-2 navLink pointer"><Icon icon={['fab', 'github']} size="lg" /></Nav.Link>
+                                <Nav.Link target="_blank" href="https://www.linkedin.com/in/ch%C3%AD-linh-tr%E1%BA%A7n-a54928200/" className="mx-2 navLink pointer"><Icon icon={['fab', 'linkedin']} size="lg" /></Nav.Link>
                             </Nav>
                         </Nav>
                     </Navbar.Collapse>
@@ -148,12 +148,12 @@ const App = () => {
             <Container ref={aboutRef} id="0" className="d-flex scroll justify-content-center align-items-center container" style={{ minHeight: 'calc(100vh - 60px)' }} >
                 <Row className="container bg-white p-5 mt-2" >
                     <Col xs={12} lg={5} sm={12} className="  slideInDown my-3 d-flex align-items-center justify-content-center">
-                        <div className="img-ava-container">
+                        <div className="img-ava-container pointer">
                             <Image src="ava3.jpg" className="img-ava" />
                         </div>
                     </Col>
                     <Col xs={12} lg={7} sm={12} className="my-3">
-                        <h2 className="fontCali" style={{color:" #74879a"}}>
+                        <h2 className="fontCali my-name">
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter.changeDelay(75)

@@ -9,7 +9,7 @@ const CardProject = ({ project }) => {
         <Col lg={6} md={12} sm={12} xs={12} className="d-flex justify-content-center my-2">
             <ScrollAnimation offset={300} animateIn='zoomIn'
   animateOut='fadeOut'>
-                <Card style={{ width: '100%' }} className="shadow border-0">
+                <Card style={{ width: '100%' }} className="shadow border-1 bg-white text-color">
                     <Card.Img variant="top" src={project.img} style={{ height: '220px', objectFit: 'cover' }} />
                     <Card.Body className=" d-flex flex-column justify-content-between">
                         <div>

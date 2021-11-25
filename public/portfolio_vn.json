@@ -8,7 +8,7 @@
     },
     "about": {
         "greeting": "Xin chào, Tôi là Linh",
-        "introduction": "<p>Sau 2 năm làm việc và gắn bó với lĩnh vực Công nghệ sinh học, tôi nhận ra đây không phải là niềm đam mê của mình, vì thế tôi quyết định chuyển hướng sang lĩnh vực Công nghệ thông tin.</p><p>Với bản tính ưa thích mài mò và tạo ra những sản phẩm trực quan, tôi biết mình đã tìm đúng hướng đi mới.</p><p>Tôi đang tìm kiếm một môi trường làm việc để có thể trao dồi và phát triển kỹ năng trong lĩnh vực phát triển ứng dụng Web.</p><p>Bạn có thể liên hệ tôi qua 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1qeHHphQligTbpocFSGlDzrb9Ky6C4tT-/view?usp=sharing' target='_blank' style='text-decoration: none'>Xem CV của tôi</a> </p>"
+        "introduction": "<p>Sau 2 năm làm việc và gắn bó với lĩnh vực Công nghệ sinh học, tôi nhận ra đây không phải là niềm đam mê của mình, vì thế tôi quyết định chuyển hướng sang lĩnh vực Công nghệ thông tin.</p><p>Với bản tính ưa thích mài mò và tạo ra những sản phẩm trực quan, tôi biết mình đã tìm đúng hướng đi mới.</p><p>Tôi đang tìm kiếm một môi trường làm việc để có thể trao dồi và phát triển kỹ năng trong lĩnh vực phát triển ứng dụng Web.</p><p>Bạn có thể liên hệ tôi qua 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1qeHHphQligTbpocFSGlDzrb9Ky6C4tT-/view?usp=sharing' target='_blank' className='pointer' style='text-decoration: none'>Xem CV của tôi</a> </p>"
     },
     "projects": [
         {
