@@ -1,14 +1,17 @@
 {
     "nav": {
         "about": "About",
-        "projects": "PET Projects",
+        "projects": {
+            "nav":"PROJECTS",
+            "title": "PET PROJECTS"
+        },
         "skills": "Skills",
         "experience": "Experience",
         "contact": "Contact"
     },
     "about": {
         "greeting": "My name's Linh",
-        "introduction": "<p>After 2 years of working in Biotechnology field, I realized this is not my passion and I decided to start over again in Software Development industry.</p><p>Intrigued by curiosity and creativity in building interesting applications, I know that I chose the right path.</p><p>Seeking to work in an environment that will help me improve my knowledge and develop my skills in Web Development Process, while allowing me to contribute to the continued growth and success of your organization.</p><p>Contact me via 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1qeHHphQligTbpocFSGlDzrb9Ky6C4tT-/view?usp=sharing' className='pointer' target='_blank'style='text-decoration: none'>View my CV</a></p>"
+        "introduction": "<p>After 2 years of working in Biotechnology field, I realized this is not my passion and I decided to start over again in Software Development industry.</p><p>Intrigued by curiosity and creativity in building interesting applications, I know that I chose the right path.</p><p>Seeking to work in an environment that will help me improve my knowledge and develop my skills in Web Development Process, while allowing me to contribute to the continued growth and success of your organization.</p><p>Contact me via 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1dd_0hgj_NIWW5ny4u3oRsKXrB0D-O1eM/view?usp=sharing' className='pointer' target='_blank'style='text-decoration: none'>View my CV</a></p>"
     },
     "projects": [
         {
@@ -16,22 +19,33 @@
             "img": "./belle-shop.jpg",
             "title": "Belle E-commerce",
             "summary": "This is an fullstack e-commerce web app with basic features",
+            "link": {
+                "fe": "https://ali-chat.netlify.app/",
+                "be": "",
+                "source": ""
+            },
+            "video": "https://www.youtube.com/embed/fdoX9lG3oQI",
             "images": [
                 "./ali-chat.jpg",
                 "./ali-chat.jpg"
             ],
-            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username and story</li><li>Searching users by name and username</li><li>Texting features: sending text, emoji and picture</li><li>Enable users to reply a specific message</li><li>For group-chat features: able to add more and remove members as the host role and leave group as the member role</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
         } , 
         {
             "id": 1,
             "img": "./ali-chat.jpg",
             "title": "ALi Chat Application",
             "summary": "This is an MERN chat application with several basic chat features",
+            "link": {
+                "fe": "https://ali-chat.netlify.app/",
+                "be": "",
+                "source": ""
+            },
+            "video": "https://www.youtube.com/embed/fdoX9lG3oQI",
             "images": [
-                "./ali-chat.jpg",
-                "./ali-chat.jpg"
+                "./A0.png", "./A1.png", "./A2.png", "./A3.png", "./A4.png", "./A5.png"          
             ],
-            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+            "description":"<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook account</li><li>User's profile: update avatar, username and story</li><li>Searching users by name and username</li><li>Texting features: sending text, emoji and picture</li><li>Enable users to reply a specific message</li><li>For group-chat features: able to add more and remove members as the host role and leave group as the member role</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul>"
         } 
     ],
     "skills": {
