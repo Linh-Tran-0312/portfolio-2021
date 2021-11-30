@@ -1,14 +1,17 @@
 {
     "nav": {
-        "about": "Giới Thiệu",
-        "projects": "Dự Án Cá Nhân",
+        "about":"GIỚI THIỆU",
+        "projects": {
+            "nav":"DỰ ÁN",
+            "title": "Dự Án Cá Nhân"
+        },
         "skills": "Kỹ Năng",
         "experience": "Kinh Nghiệm",
         "contact":"Liên Hệ"
     },
     "about": {
         "greeting": "Xin chào, Tôi là Linh",
-        "introduction": "<p>Sau 2 năm làm việc và gắn bó với lĩnh vực Công nghệ sinh học, tôi nhận ra đây không phải là niềm đam mê của mình, vì thế tôi quyết định chuyển hướng sang lĩnh vực Công nghệ thông tin.</p><p>Với bản tính ưa thích mài mò và tạo ra những sản phẩm trực quan, tôi biết mình đã tìm đúng hướng đi mới.</p><p>Tôi đang tìm kiếm một môi trường làm việc để có thể trao dồi và phát triển kỹ năng trong lĩnh vực phát triển ứng dụng Web.</p><p>Bạn có thể liên hệ tôi qua 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1qeHHphQligTbpocFSGlDzrb9Ky6C4tT-/view?usp=sharing' target='_blank' className='pointer' style='text-decoration: none'>Xem CV của tôi</a> </p>"
+        "introduction": "<p>Sau 2 năm làm việc và gắn bó với lĩnh vực Công nghệ sinh học, tôi nhận ra đây không phải là niềm đam mê của mình, vì thế tôi quyết định chuyển hướng sang lĩnh vực Công nghệ thông tin.</p><p>Với bản tính ưa thích mài mò và tạo ra những sản phẩm trực quan, tôi biết mình đã tìm đúng hướng đi mới.</p><p>Tôi đang tìm kiếm một môi trường làm việc để có thể trao dồi và phát triển kỹ năng trong lĩnh vực phát triển ứng dụng Web.</p><p>Bạn có thể liên hệ tôi qua 📧 linhtran.atwork@gmail.com | <a href='https://drive.google.com/file/d/1dd_0hgj_NIWW5ny4u3oRsKXrB0D-O1eM/view?usp=sharing' target='_blank' className='pointer' style='text-decoration: none'>Xem CV của tôi</a> </p>"
     },
     "projects": [
         {
@@ -16,6 +19,12 @@
             "img": "./belle-shop.jpg",
             "title": "Ứng dụng Belle E-commerce",
             "summary": "Một ứng dụng web thương mại với mô hình cliet-server",
+            "link": {
+                "fe": "https://ali-chat.netlify.app/",
+                "be": "",
+                "source": ""
+            },
+            "video": "https://www.youtube.com/embed/fdoX9lG3oQI",
             "images": [
                 "./ali-chat.jpg",
                 "./ali-chat.jpg"
@@ -27,11 +36,16 @@
             "img": "./ali-chat.jpg",
             "title": "Ứng dụng ALi Chat",
             "summary": "Đây là ứng dụng chat sử dụng MERN stack với những chức năng cơ bản",
+            "video": "https://www.youtube.com/embed/fdoX9lG3oQI",
+            "link": {
+                "fe": "https://ali-chat.netlify.app/",
+                "be": "",
+                "source": ""
+            },
             "images": [
-                "./ali-chat.jpg",
-                "./ali-chat.jpg"
+                "./A0.png", "./A1.png", "./A2.png", "./A3.png", "./A4.png", "./A5.png"          
             ],
-            "description": "<h4>Chức năng</h4><ul>   <li>Đăng nhập, đăng ký và đăng nhập với tài khoản Google và Facebook.</li><li>Quản lý tài khoản: cho phép cập nhật tên, username, ảnh đại diện và giới thiệu bản thân.</li><li>Tìm kiếm người dùng thông qua tên tài khoản.</li><li>Tính năng nhắn tin: có thể gửi tin nhắn văn bản, hình ảnh và emoji.</li><li>Cho phép người dùng trả lời một tin nhắn khác.</li><li>Có nhắn tin riêng hoặc nhắn tin theo nhóm.</li><li>Tính năng nhóm: người tạo nhóm có thể thêm và loại bỏ các thành viên trong nhóm, thanh viên có thể tự rời khỏi nhóm</li></ul><h4>Ngôn ngữ và thư viện sử dụng</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4></h4>"
+            "description": "<h4>Chức năng</h4><ul><li>Đăng nhập, đăng ký và đăng nhập với tài khoản Google và Facebook.</li><li>Quản lý tài khoản: cho phép cập nhật tên, username, ảnh đại diện và giới thiệu bản thân.</li><li>Tìm kiếm người dùng thông qua tên tài khoản.</li><li>Tính năng nhắn tin: có thể gửi tin nhắn văn bản, hình ảnh và emoji.</li><li>Cho phép người dùng trả lời một tin nhắn khác.</li><li>Có nhắn tin riêng hoặc nhắn tin theo nhóm.</li><li>Tính năng nhóm: người tạo nhóm có thể thêm và loại bỏ các thành viên trong nhóm, thanh viên có thể tự rời khỏi nhóm</li></ul><h4>Ngôn ngữ và thư viện sử dụng</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4></h4>"
         } 
     ],
     "skills": {
@@ -52,7 +66,7 @@
         },
         {
             "period": "2018-2020",
-            "position": "Nhân viên Ứng dụng",
+            "position": "Chuyên viên Ứng dụng",
             "company": "Công ty Cổ phần Biomedic"
         },
         {

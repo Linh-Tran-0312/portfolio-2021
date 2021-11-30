@@ -134,13 +134,14 @@ const App = () => {
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto text-center h6 font-bold">
                             <Nav.Link href="#" onClick={() => handleScroll(0)} className="d-flex flex-column justify-content-center align-items-center navLink "><strong className={aboutInView ? "activeSection" : "hover-underline-animation pointer"}>{data.nav.about.toUpperCase()}</strong></Nav.Link>
-                            <Nav.Link href="#" onClick={() => handleScroll(1)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={projectInView ? "activeSection" : "hover-underline-animation"}>{data.nav.projects.slice(4).toUpperCase()}</strong></Nav.Link>
+                            <Nav.Link href="#" onClick={() => handleScroll(1)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={projectInView ? "activeSection" : "hover-underline-animation"}>{data.nav.projects.nav.toUpperCase()}</strong></Nav.Link>
                             <Nav.Link href="#" onClick={() => handleScroll(2)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={skillInView ? "activeSection" : "hover-underline-animation"}>{data.nav.skills.toUpperCase()}</strong></Nav.Link>
                             <Nav.Link href="#" onClick={() => handleScroll(3)} className="d-flex flex-column justify-content-center align-items-center navLink pointer"><strong className={experienceInView ? "activeSection" : "hover-underline-animation"}>{data.nav.experience.toUpperCase()}</strong></Nav.Link>
                             <Nav className="d-flex flex-row justify-content-center align-items-start">
                                 <Nav.Link target="_blank" href="https://github.com/Linh-Tran-0312" className="mx-2 navLink pointer"><Icon icon={['fab', 'github']} size="lg" /></Nav.Link>
                                 <Nav.Link target="_blank" href="https://www.linkedin.com/in/ch%C3%AD-linh-tr%E1%BA%A7n-a54928200/" className="mx-2 navLink pointer"><Icon icon={['fab', 'linkedin']} size="lg" /></Nav.Link>
-                            </Nav>
+                                <Nav.Link target="_blank" href="https://m.me/chilinh.tran.12139" className="mx-2 navLink pointer"><Icon icon={['fab', 'facebook-messenger']} size="lg" /></Nav.Link>                   
+                    </Nav>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -185,7 +186,7 @@ const App = () => {
                     <Col xs={12} lg={3} md={4}>
                         <h5 className="sectionTitle">
                             <strong>
-                                {data.nav.projects.toUpperCase()}
+                                {data.nav.projects.title.toUpperCase()}
                             </strong>
                         </h5>
                     </Col>
@@ -316,7 +317,7 @@ const App = () => {
                                         </Col>
                                         <Col lg={12} className="d-flex justify-content-between">
                                             <p className={message.type ? "text-success" : "text-danger"}>{message.message}</p>
-                                            <Button variant="secondary" type="submit">{eng ? "Submit" : "Gửi"}</Button>
+                                            <Button variant="secondary" className=" rounded-0" type="submit">{eng ? "Submit" : "Gửi"}</Button>
                                         </Col>
                                     </Row>
                                 </Form>
