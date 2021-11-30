@@ -43,7 +43,7 @@
                 "source": ""
             },
             "images": [
-                "./A0.png", "./A1.png", "./A2.png", "./A3.png", "./A4.png", "./A5.png"          
+                "./A0.PNG", "./A1.PNG", "./A2.PNG", "./A3.PNG", "./A4.PNG", "./A5.PNG"        
             ],
             "description": "<h4>Chức năng</h4><ul><li>Đăng nhập, đăng ký và đăng nhập với tài khoản Google và Facebook.</li><li>Quản lý tài khoản: cho phép cập nhật tên, username, ảnh đại diện và giới thiệu bản thân.</li><li>Tìm kiếm người dùng thông qua tên tài khoản.</li><li>Tính năng nhắn tin: có thể gửi tin nhắn văn bản, hình ảnh và emoji.</li><li>Cho phép người dùng trả lời một tin nhắn khác.</li><li>Có nhắn tin riêng hoặc nhắn tin theo nhóm.</li><li>Tính năng nhóm: người tạo nhóm có thể thêm và loại bỏ các thành viên trong nhóm, thanh viên có thể tự rời khỏi nhóm</li></ul><h4>Ngôn ngữ và thư viện sử dụng</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4></h4>"
         } 

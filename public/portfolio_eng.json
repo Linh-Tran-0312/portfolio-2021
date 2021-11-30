@@ -43,7 +43,7 @@
             },
             "video": "https://www.youtube.com/embed/fdoX9lG3oQI",
             "images": [
-                "./A0.png", "./A1.png", "./A2.png", "./A3.png", "./A4.png", "./A5.png"          
+                "./A0.PNG", "./A1.PNG", "./A2.PNG", "./A3.PNG", "./A4.PNG", "./A5.PNG"          
             ],
             "description":"<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook account</li><li>User's profile: update avatar, username and story</li><li>Searching users by name and username</li><li>Texting features: sending text, emoji and picture</li><li>Enable users to reply a specific message</li><li>For group-chat features: able to add more and remove members as the host role and leave group as the member role</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul>"
         } 
