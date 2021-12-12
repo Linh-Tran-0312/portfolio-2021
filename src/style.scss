@@ -348,3 +348,8 @@ $color-black-dark: rgba(7,21,36,1);
 .pointer {
   cursor: pointer !important;
 }
+
+.box-shadow:hover {
+  box-shadow: 4px 8px 8px 5px rgba(71, 131, 221, 0.3), 4px 8px 15px 10px rgba(105, 160, 223, 0.2), 4px 8px 20px 15px rgba(105, 160, 223, 0.15);
+    transition: all 200ms ease-out;
+}

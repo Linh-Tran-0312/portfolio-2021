@@ -40,7 +40,7 @@ const initMessage = {
     message: "",
     type: true
 }
-const logo = ["react.png", "nodejs.png", "docker.png", "csharp.png", "githubaction.png", "github.png", "typescript.png", "jest.png", "mui.png"]
+const logo = ["react.png", "nodejs.png", "docker.png", "csharp.png", "redux.png", "github1.png", "typescript.png", "jest.png", "mui.png"]
 
 const App = () => {
     const [data, setData] = useState("");
@@ -181,16 +181,17 @@ const App = () => {
                 </Row>
             </Container >
 
-            <Container ref={projectRef} id="1" fluid className='d-flex justify-content-center align-items-center scroll container text-center  my-5'>
-                <Row className="d-flex justify-content-center  container bg-white py-5">
-                    <Col xs={12} lg={3} md={4}>
-                        <h5 className="sectionTitle">
+            <Container ref={projectRef} id="1" fluid className='d-flex  justify-content-center align-items-center  scroll container text-center  my-5'>
+                    
+                <Row className="d-flex justify-content-center  container bg-white py-5 px-4">
+                    <Col xs={12}>
+                    <h5 className="sectionTitle py-4">
                             <strong>
                                 {data.nav.projects.title.toUpperCase()}
                             </strong>
                         </h5>
                     </Col>
-                    <Col xs={12} lg={9} md={8} className="d-flex justify-content-center container-fluid">
+                    <Col xs={12} className="d-flex justify-content-center container-fluid">
                         <Row className="d-flex justify-content-center container">
                             {
                                 data.projects.map((project, index) => <CardProject key={index} project={project} />)
@@ -263,7 +264,7 @@ const App = () => {
                     <Col lg={4} className="d-flex justify-content-center align-items-start">
                         <ScrollAnimation offset={500} animateIn='zoomIn'
                             animateOut='fadeOut'>
-                            <img alt="logo" src="hcmus.png" className="hcmus" />
+                            <img alt="logo" src="hcmus-logo.png" className="hcmus" />
                         </ScrollAnimation>
                     </Col>
                 </Row>

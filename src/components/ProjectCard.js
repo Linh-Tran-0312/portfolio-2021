@@ -6,12 +6,13 @@ import ProjectModal from './ProjectModal';
 
 const CardProject = ({ project }) => {
     return (
-        <Col lg={6} md={12} sm={12} xs={12} className="d-flex justify-content-center my-2">
+        <Col lg={5} md={12} sm={12} xs={12} className="d-flex justify-content-center my-2">
+           
             <ScrollAnimation offset={300} animateIn='zoomIn'
-  animateOut='fadeOut'>
-                <Card style={{ width: '100%' }} className="shadow border-1 bg-white text-color">
-                    <Card.Img variant="top" src={project.img} style={{ height: '220px', objectFit: 'cover' }} />
-                    <Card.Body className=" d-flex flex-column justify-content-between">
+  animateOut='fadeOut' style={{width: "80%",height: "400px", display: "flex",justifyContent: "center" }}>
+                <Card style={{ width: '100%', height: "100%" }}  className="box-shadow border-1 border-light bg-white text-color rounded-0">
+                    <Card.Img variant="top" src={project.img} style={{ height: '220px', width: "100%", objectFit: 'cover', borderRadius: 0, border: 0 }} />
+                    <Card.Body className=" d-flex flex-column justify-content-between rounded-0">
                         <div>
                             <Card.Title>{project.title}</Card.Title>
                             <Card.Text className="text-start">
@@ -24,6 +25,7 @@ const CardProject = ({ project }) => {
                     </Card.Body>
                 </Card>
             </ScrollAnimation>
+          
         </Col>
     )
 }
