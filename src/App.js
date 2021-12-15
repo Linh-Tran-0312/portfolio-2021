@@ -225,8 +225,8 @@ const App = () => {
                         <Row >
                             {
                                 logo.map(i => <Col key={i} xs={4} className="p-2 py-3">
-                                    <ScrollAnimation offset={500} animateIn='zoomIn'
-                                        animateOut='fadeOut'>
+                                    <ScrollAnimation offset={500} delay={Math.random()*1000} animateIn='zoomIn'
+                                        animateOut='zoomOut'>
                                         <img alt="logo" src={i} className="logo" />
                                     </ScrollAnimation>
 

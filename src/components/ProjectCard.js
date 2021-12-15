@@ -8,8 +8,8 @@ const CardProject = ({ project }) => {
     return (
         <Col lg={5} md={12} sm={12} xs={12} className="d-flex justify-content-center my-2">
            
-            <ScrollAnimation offset={300} animateIn='zoomIn'
-  animateOut='fadeOut' style={{width: "80%",height: "400px", display: "flex",justifyContent: "center" }}>
+            <ScrollAnimation offset={300} animateIn='flipInY' duration={1}
+  animateOut='flipOutY' style={{width: "80%",height: "400px", display: "flex",justifyContent: "center" }}>
                 <Card style={{ width: '100%', height: "100%" }}  className="box-shadow border-1 border-light bg-white text-color rounded-0">
                     <Card.Img variant="top" src={project.img} style={{ height: '220px', width: "100%", objectFit: 'cover', borderRadius: 0, border: 0 }} />
                     <Card.Body className=" d-flex flex-column justify-content-between rounded-0">
