@@ -12,6 +12,7 @@ import { Button, ButtonGroup, Col, Container, Form, Image, Nav, Navbar, Row } fr
 import './animate.css';
 import BgAnimation from './components/BgAnimation';
 import CardProject from './components/ProjectCard';
+import ProjectThumb from './components/Thumbnail';
 import './style.scss';
 import { useInView } from "react-intersection-observer";
 import Typewriter from 'typewriter-effect';
@@ -180,7 +181,7 @@ const App = () => {
                     </Col>
                 </Row>
             </Container >
-
+{/* 
             <Container ref={projectRef} id="1" fluid className='d-flex  justify-content-center align-items-center  scroll container text-center  my-5'>
                     
                 <Row className="d-flex justify-content-center  container bg-white py-5 px-4">
@@ -199,6 +200,31 @@ const App = () => {
                         </Row>
                     </Col>
                 </Row>
+            </Container> */}
+
+            <Container fluid className="bg-white scroll my-5" ref={projectRef} id="1">
+                <Container className="py-5">
+                <Row className='my-3  mb-5 py-2 justify-content-lg-between spacing-2 column-reverse'>
+                    <Col lg={5} sm={12} className="text-start">
+                      
+                        <h3 className="fontCali my-3 text-color">{data.projects[0].title}</h3>
+                        <p>{data.projects[0].summary}</p>
+                       
+                    </Col>
+                    <Col lg={7} sm={12}>
+                    <ProjectThumb project={data.projects[0]} />
+                    </Col>
+                </Row>
+                <Row className='my-3 mb-5 py-2 justify-content-lg-between'>
+                    <Col lg={7} sm={12}>
+                    <ProjectThumb project={data.projects[1]} /> 
+                    </Col>
+                    <Col lg={5} sm={12} className="text-start ml-3" >               
+                    <h3 className="fontCali my-3 text-color">{data.projects[1].title}</h3>
+                        <p>{data.projects[1].summary}</p>                  
+                    </Col>
+                </Row>
+                </Container>         
             </Container>
 
             <Container ref={skillRef} id="2" className="container d-flex justify-content-center align-items-center  text-center my-5 scroll">

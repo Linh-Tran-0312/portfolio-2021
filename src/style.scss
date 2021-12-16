@@ -27,6 +27,10 @@ $color-transparent : rgba(0,0,0,0);
 $color-gray-light: rgba($color-white, .15);
 $color-gray-dark: rgba(7,21,36,0.9);
 $color-black-dark: rgba(7,21,36,1);
+$color-crystal: rgb(156, 156, 156, 0.8);
+$color-gradient: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73));
+ 
+
 :root {
   --color-background: #{$color-white};
   --color-text: #{$color-black};
@@ -37,6 +41,7 @@ $color-black-dark: rgba(7,21,36,1);
   --color-util-button: #{$color-white};
   --color-nav-toggler: #{$color-transparent}; 
   --color-my-name: #{$color-black-green};
+  --color-overlay: #{$color-crystal};
  
 }
 
@@ -50,6 +55,7 @@ $color-black-dark: rgba(7,21,36,1);
   --color-util-button: #{$color-white};
   --color-nav-toggler: #{$color-opacity-1}; 
   --color-my-name: #{$color-white};
+  --color-overlay: #{$color-crystal};
 }
 .loading {
     width: 100vw;
@@ -138,7 +144,7 @@ $color-black-dark: rgba(7,21,36,1);
 }
 .loader {
   color: #33383d;
-  font-size: 7px;
+  font-size: 4px;
   margin: 50px auto;
   position: relative;
   text-indent: -9999em;
@@ -207,6 +213,10 @@ $color-black-dark: rgba(7,21,36,1);
   .sectionTitle {
     font-weight: 400;
     text-align: center;
+  }
+  .column-reverse {
+    flex-direction: column-reverse;
+
   }
 }
 .scroll {
@@ -352,4 +362,50 @@ $color-black-dark: rgba(7,21,36,1);
 .box-shadow:hover {
   box-shadow: 4px 8px 8px 5px rgba(71, 131, 221, 0.3), 4px 8px 15px 10px rgba(105, 160, 223, 0.2), 4px 8px 20px 15px rgba(105, 160, 223, 0.15);
     transition: all 200ms ease-out;
+}
+
+.thumb {
+  position: relative;
+
+} 
+.thumb:hover .thumb-body   {
+  height: 100%;
+}
+ 
+
+
+.thumb-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index:15;
+}
+.thumb-body {
+  position: absolute;
+  z-index:16;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:var(--color-overlay);
+  width: 100%;
+  height: 0;
+  overflow: hidden; 
+  transition: .5s ease;
+}
+.thumb-text {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ top:50%;
+ left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

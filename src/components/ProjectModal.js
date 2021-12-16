@@ -70,7 +70,7 @@ const ProjectModal = ({ project }) => {
 
     return (
         <>
-            <Button variant="secondary" className="rounded-0" style={{ backgroundColor: "#e7e7e7", color: 'black', border: 'none' }} onClick={() => setModalShow(true)}>More Info
+            <Button variant="secondary" className="rounded-0" style={{ backgroundColor: "white", color: 'black', border: 'none' }} onClick={() => setModalShow(true)}>More Info
             </Button>
 
             <MyVerticallyCenteredModal
