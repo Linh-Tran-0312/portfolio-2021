@@ -18,7 +18,7 @@
             "id": 3,
             "img": "./belle-shop.jpg",
             "title": "Belle E-commerce",
-            "summary": "This is an fullstack e-commerce web app with basic features",
+            "summary": "<p>This is an e-commerce web application built using PERN Stack</p><p>Shopper features include browsing products, adding items to cart, viewing blog content, etc...</p><p>Administrative features include the ability to create and manage product and blog pages (as editor role), to manage order and user list and to generate sales reports (as admin role)</p>",
             "link": {
                 "fe": "https://ali-chat.netlify.app/",
                 "be": "",
@@ -35,7 +35,7 @@
             "id": 1,
             "img": "./ali-chat.jpg",
             "title": "ALi Chat Application",
-            "summary": "This is an MERN chat application with several basic chat features",
+            "summary": "<p>This is a MERN chat application with basic chat features</p><p>Allow users to send messages with emojis and photos in personal chat or group chat</p>",
             "link": {
                 "fe": "https://ali-chat.netlify.app/",
                 "be": "",
@@ -45,7 +45,7 @@
             "images": [
                 "./A0.PNG", "./A1.PNG", "./A2.PNG", "./A3.PNG", "./A4.PNG", "./A5.PNG"          
             ],
-            "description":"<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook account</li><li>User's profile: update avatar, username and story</li><li>Searching users by name and username</li><li>Texting features: sending text, emoji and picture</li><li>Enable users to reply a specific message</li><li>For group-chat features: able to add more and remove members as the host role and leave group as the member role</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul>"
+            "description":"<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook account</li><li>User's profile: update avatar, username and story</li><li>Searching users by name and username</li><li>Texting features: sending text, emoji and picture</li><li>Enable users to reply a specific message</li><li>For group-chat features: able to add more and remove members as the host role and leave group as the member role</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Deployed in Heroku</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li><li>Deployed in Netlify</li></ul><h4>References</h4><ul><li><a href='https://medium.com/@byn9826/verify-facebook-login-by-python-e02ac1e23e37' target='_blank'>How to verify facebook in the backend</a></li></ul><h4>Demo link</h4><ul><li>Test account: user.test.2@gmail.com/123456 </li></ul>"
         } 
     ],
     "skills": {

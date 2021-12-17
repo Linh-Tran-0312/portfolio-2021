@@ -27,7 +27,7 @@ $color-transparent : rgba(0,0,0,0);
 $color-gray-light: rgba($color-white, .15);
 $color-gray-dark: rgba(7,21,36,0.9);
 $color-black-dark: rgba(7,21,36,1);
-$color-crystal: rgb(156, 156, 156, 0.8);
+$color-crystal: rgb(0,0,0, 0.5);
 $color-gradient: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73));
  
 
@@ -209,11 +209,15 @@ $color-gradient: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117,
   font-family:  'Calibre-Regular', sans-serif;
   letter-spacing: 0.05em;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
   .sectionTitle {
     font-weight: 400;
     text-align: center;
   }
+
+}
+@media only screen and (max-width: 991px) {
+ 
   .column-reverse {
     flex-direction: column-reverse;
 
@@ -366,23 +370,23 @@ $color-gradient: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117,
 
 .thumb {
   position: relative;
+  width: 100%;
+  height: 100%;
 
 } 
 .thumb:hover .thumb-body   {
   height: 100%;
 }
- 
-
 
 .thumb-img {
   position: absolute;
   width: 100%;
-  height: 100%;
-  z-index:15;
+ height: 100%
+ 
 }
 .thumb-body {
   position: absolute;
-  z-index:16;
+  
   bottom: 0;
   left: 0;
   right: 0;
@@ -408,4 +412,26 @@ $color-gradient: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+
+.iframe {
+  height: 400px
+}
+a {
+  text-decoration: none;
+}
+@media only screen and (min-width: 1024px) {
+  .img-carousel {
+    height: 80vh
+  }
+  .iframe {
+    height: 80vh
+  }
+  .pl5 {
+    padding-left: 3rem !important;
+  }
+  .pr5 {
+    padding-right: 3rem !important;
+  }
 }
