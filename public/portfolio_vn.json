@@ -18,18 +18,17 @@
             "id": 3,
             "img": "./belle-shop.jpg",
             "title": "Ứng dụng Belle E-commerce",
-            "summary": "Một ứng dụng web thương mại với mô hình cliet-server",
+            "summary": "<p>Một ứng dụng web thương mại điện tử sử dụng PERN stack</p><p>Chức năng cho người dùng: xem các bài viết, tìm kiếm sản phẩm, chức năng giỏ hàng,...</p><p>Chức năng quản lý: các bài viết và danh mục sản phẩm, quản lý người dùng, đơn hàng và báo cáo</p>",
             "link": {
-                "fe": "https://ali-chat.netlify.app/",
-                "be": "",
-                "source": ""
+                "fe": "https://belle-ecommerce.netlify.app/",
+                "be": "https://belle-ecommerce.herokuapp.com/docs/",
+                "source": "https://github.com/Linh-Tran-0312/Belle-Ecommerce"
             },
-            "video": "https://www.youtube.com/embed/fdoX9lG3oQI",
+            "video": "https://www.youtube.com/embed/qg2jJ3Gn1pk",
             "images": [
-                "./ali-chat.jpg",
-                "./ali-chat.jpg"
+                "./B1.PNG","./B2.PNG", "./B3.PNG", "./B4.PNG", "./B5.PNG" ,"./B6.PNG","./B7.PNG"    
             ],
-            "description": "<h4>Features</h4><ul><li>Login, Register and Login with Google and Facebook</li><li>User's profile: update avatar, username allow others search your profile and your story</li><li>Search users by name and username in search tool</li><li>Texting feature: allow user send text, emoji and picture</li><li>Enable user reply a specific message</li><li>For group-chat feature: ability to add more members and remove if you're an host. Leave group if you're an member</li></ul><h4>Technologies</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>MongoDatabase</li><li>NodeJS</li><li>Socket.IO</li><li>Cloudinary for storing images</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Socket-Client.IO</li><li>Material UI</li></ul><h4>References</h4>"
+            "description": "<h4>Chức năng</h4><ul>Cửa hàng<li>Bài viết: tìm kiếm các bài viết theo tiêu đề và chủ đề, xem và bình luận (chưa hoàn thành) nội dung bài viết</li><li>Sản phẩm: cho phép khách hàng tìm kiếm sản phẩm theo tên, nhóm, thương hiệu và giá của sản phẩm, bình luận về sản phẩm (chưa hoàn thành), đánh giá sản phẩm sau khi mua.</li><li>Giỏ hàng: cho phép khách hàng thêm, cập nhật số lượng và xóa các sản phẩm trong giỏ hàng và đặt hàng.</li></ul><ul>Quản lý<li>Bài viết (quyền BTV): thêm, xóa và sửa chủ đề và nội dung bài viết.</li><li>Sản phẩm (quyền BTV): thêm, xóa và sửa sản phẩm, thuộc tính của sản phẩm (nhóm, thương hiệu, kích thước, màu sắc) và các phiên bản của sản phẩm đó.</li><li>Người dùng (quền QL): thêm mới và cập nhật thông tin người dùng và tìm kiếm người dùng theo thông tin (tên, email, SĐT và địa chỉ).</li><li>Đơn hàng (quyền QL): tìm kiếm đơn hàng theo tên, email, SĐT của người dùng, địa chỉ giao hàng, mã đơn hàng, trạng thái đơn hàng,... và cập nhật tình trạng đơn hàng.</li><li>Báo cáo (quyền QL): hiển thị thống kê tổng quan của tháng hiện tại (số người đăng ký mới, số đơn hàng và doanh thu), thống kê doanh số và đơn hàng theo ngày và tháng, liệt kê danh sách các sản phẩm bán chạy.</li></ul><h4>Công nghệ</h4><h6>&nbsp;&nbsp;Backend</h6><ul><li>Postgres Database</li><li>TypeORM</li><li>Express</li><li>TSOA</li></ul><h6>&nbsp;&nbsp;Frontend</h6><ul><li>ReactJS and Redux</li><li>Axios</li><li>Material UI</li></ul><h4>Demo link</h4><ul><li>Customer account: customer.test10@gmail.com/123456 </li><li>Admin account: admin@gmail.com/123456 </li></ul>"
         } , 
         {
             "id": 1,
@@ -40,7 +39,7 @@
             "link": {
                 "fe": "https://ali-chat.netlify.app/",
                 "be": "",
-                "source": ""
+                "source": "https://github.com/Linh-Tran-0312/Ali-Chat"
             },
             "images": [
                 "./A0.PNG", "./A1.PNG", "./A2.PNG", "./A3.PNG", "./A4.PNG", "./A5.PNG"        
@@ -55,7 +54,7 @@
         },
         "technical": {
             "title": "Kỹ năng Chuyên môn",
-            "details":" <ul><li>Biết sử dụng HTML, CSS, JS </li><li>Kiến thức với ReactJS và NodeJS(Typescript)</li><li>Có thể viết Unit test với Jest và Supertest cho Rest API</li><li>Có khả năng sử dụng C# và kiến thức OOP</li><li>Thao tác cơ bản với Docker</li><li>Có thể thực hiện CI/CD với Github Action</li></ul>"
+            "details":" <ul><li>Biết sử dụng HTML, CSS, JS </li><li>Kiến thức với ReactJS và NodeJS(Typescript)</li><li>Có thể sử dụng git với các lệnh cơ bản</li><li>Có khả năng sử dụng C# và kiến thức OOP</li><li>Thao tác cơ bản với Docker</li></ul>"
         }
     },
     "experience": [
@@ -66,7 +65,7 @@
         },
         {
             "period": "2018-2020",
-            "position": "Chuyên viên Ứng dụng",
+            "position": "Kinh doanh kỹ thuật",
             "company": "Công ty Cổ phần Biomedic"
         },
         {

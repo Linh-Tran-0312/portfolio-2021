@@ -148,9 +148,9 @@ const App = () => {
             <Container ref={aboutRef} id="0" className="d-flex scroll justify-content-center align-items-center container" style={{ minHeight: 'calc(100vh - 60px)' }} >
                 <Row className="container bg-white p-5 mt-2" >
                     <Col xs={12} lg={5} sm={12} className="  slideInDown my-3 d-flex align-items-center justify-content-center">
-                        <div className="img-ava-container pointer">
-                            <Image src="ava3.jpg" className="img-ava" />
-                        </div>
+                         <div className="img-ava-container pointer">            
+                              <Image src="ava3.jpg" className="img-ava" /> 
+                        </div>  
                     </Col>
                     <Col xs={12} lg={7} sm={12} className="my-3">
                         <h2 className="fontCali my-name">
@@ -362,10 +362,10 @@ const App = () => {
             </Container>
             <Container className="d-flex justify-content-center align-items-center  text-center my-5">
                 <Row className="align-items-center  bg-white container  justify-content-center fontCaliReg py-5">
-                        <Col xs={12} lg={8} md={8}> 
-                            <h6>"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."</h6>
-                            <h5>- Steve Jobs -</h5> 
-                        </Col>
+                    <Col xs={12} lg={8} md={8}>
+                        <h6>"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."</h6>
+                        <h5>- Steve Jobs -</h5>
+                    </Col>
                 </Row>
             </Container>
             <ButtonGroup className="language" vertical>

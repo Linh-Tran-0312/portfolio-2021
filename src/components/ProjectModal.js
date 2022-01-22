@@ -48,12 +48,12 @@ function MyVerticallyCenteredModal(props) {
                 <Container className="my-3 px-4">
                     {parse(props.detail.description)}
                     <Container className="d-flex justify-content-start">
-                    <Button variant="success" className="mx-2 rounded-0"><a href="https://github.com/Linh-Tran-0312/Ali-Chat"  target="_blank" rel="noreferrer" className="text-white text-decoration-none"><Icon icon={['fab', 'github-square']} size="lg" />&nbsp; Source </a></Button>
+                    <Button variant="success" className="mx-2 rounded-0"><a href={props.detail.link.source}  target="_blank" rel="noreferrer" className="text-white text-decoration-none"><Icon icon={['fab', 'github-square']} size="lg" />&nbsp; Source </a></Button>
                     {
-                        props.detail.link.be !== "" && <Button variant="primary" className="mx-2 rounded-0"><a href="https://github.com/Linh-Tran-0312/Ali-Chat" rel="noreferrer" target="_blank" className="text-white text-decoration-none"><Icon icon={['fas', 'server']} size="lg" />&nbsp; API </a></Button>
+                        props.detail.link.be !== "" && <Button variant="primary" className="mx-2 rounded-0"><a href={props.detail.link.be} rel="noreferrer" target="_blank" className="text-white text-decoration-none"><Icon icon={['fas', 'server']} size="lg" />&nbsp; API </a></Button>
 
                     }
-                        <Button variant="info" className="mx-2 rounded-0"><a href="https://ali-chat.netlify.app/" rel="noreferrer" target="_blank" className="text-white text-decoration-none"><Icon icon={['fas', 'external-link-square-alt']} size="lg" />&nbsp; Demo</a></Button>
+                        <Button variant="info" className="mx-2 rounded-0"><a href={props.detail.link.fe} rel="noreferrer" target="_blank" className="text-white text-decoration-none"><Icon icon={['fas', 'external-link-square-alt']} size="lg" />&nbsp; Demo</a></Button>
 
                     </Container>
                 </Container>
